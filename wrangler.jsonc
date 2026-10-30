@@ -1,0 +1,21 @@
+{
+  "name": "cad-x-forge-api",
+  "main": "src/index.ts",
+  "compatibility_date": "2025-01-01",
+  "observability": { "enabled": true },
+  "d1_databases": [
+    { "binding": "DB", "database_name": "cad-x-forge", "database_id": "f5803fca-969e-413b-b9b6-4c9aa7ec3ba5", "migrations_dir": "migrations" }
+  ],
+  "r2_buckets": [
+    { "binding": "FILES", "bucket_name": "cad-x-forge-files","preview_bucket_name": "cad-x-forge-files" }
+  ],
+  "vars": {
+    "ALLOWED_ORIGIN": "https://talga170291.github.io",
+    "WEBAPP_URL": "https://talga170291.github.io/cad-x-forge/",
+    "ADMIN_URL": "https://talga170291.github.io/cad-x-forge/admin/",
+    "MAX_FILE_MB": "25",
+    "MAX_IMAGE_MB": "5",
+    "LINK_TTL_SECONDS": "120",
+    "INITDATA_MAX_AGE": "86400"
+  }
+}

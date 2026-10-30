@@ -1,0 +1,10 @@
+{
+  "name": "cad-x-forge-api",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "test": "node --experimental-strip-types --experimental-sqlite --test test/api.test.ts test/frontend.test.ts",
+    "deploy": "wrangler deploy"
+  },
+  "devDependencies": { "wrangler": "^4.0.0" }
+}
