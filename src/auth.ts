@@ -9,7 +9,7 @@ export async function verifyInitData(initData: string, botToken: string, maxAge:
   if (!h) throw new HttpError(401, 'invalid_init_data');
   p.delete('hash');
   const dcs = [...p.entries()].sort((a, b) => (a[0] < b[0] ? -1 : a[0] > b[0] ? 1 : 0)).map(([k, v]) => `${k}=${v}`).join('\n');
-  const secret = await hmac(botToken, 'WebAppData');
+  const secret = await hmac('WebAppData', botToken);
   if (!safeEq(hex(await hmac(secret, dcs)), h.toLowerCase())) throw new HttpError(401, 'invalid_init_data');
   const ad = int(p.get('auth_date'), 0);
   if (!ad || at - ad > maxAge) throw new HttpError(401, 'init_data_expired');
